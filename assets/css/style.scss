@@ -1,8 +1,7 @@
-@use 'fonts';
 @use 'vars' as *;
-
-$machina-font: 'Neue Machina', sans-serif;
-$raleway-font: 'Raleway', sans-serif;
+@use 'fonts';
+@use 'buttons';
+@use 'hero';
 
 * {
   padding: 0;
@@ -14,6 +13,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   font-size: 20px;
+  font-family: $raleway-font;
 }
 
 header ul {
@@ -23,11 +23,17 @@ header ul {
   align-items: center;
 }
 
-.container {
+.header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+}
+
+.container {
+  max-width: 1440px; // Или твои 1440px
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header__logo {

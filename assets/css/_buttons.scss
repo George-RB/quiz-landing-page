@@ -1,0 +1,28 @@
+@use 'vars' as *;
+@use 'fonts';
+
+// _buttons.scss
+.button {
+  display: inline-block;
+  font-family: $raleway-font;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  text-decoration: none;
+
+  // Основной вид (Черная)
+  &--primary {
+    background: $btn_bg;
+    color: #fff;
+
+    &:hover {
+      background: $btn_hover;
+      transform: translateY(-2px);
+    }
+  }
+}
