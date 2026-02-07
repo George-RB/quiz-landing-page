@@ -22,8 +22,15 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
+function fonts() {
+  return src('./assets/fonts/**/*', { encoding: false }) // Путь к исходным шрифтам
+    .pipe(dest('./dist/assets/fonts')); // Путь в папку сборки
+}
+
 function images() {
-  return src('./assets/img/**/*').pipe(dest('./dist/assets/img'));
+  return src('./assets/img/**/*', { encoding: false }).pipe(
+    dest('./dist/assets/img'),
+  );
 }
 
 function copyCss() {
@@ -38,11 +45,12 @@ function serve() {
   watch('./assets/css/**/*.scss', styles);
   watch('./*.html', html).on('change', browserSync.reload);
   watch('./assets/js/**/*.js', scripts).on('change', browserSync.reload);
+  watch('./assets/fonts/**/*', fonts);
   watch('./assets/img/**/*', images).on('change', browserSync.reload);
 }
 
 exports.default = series(
-  parallel(styles, html, scripts, images, copyCss),
+  parallel(styles, html, scripts, images, copyCss, fonts),
   serve,
 );
 exports.build = parallel(styles, html, scripts, images, copyCss);

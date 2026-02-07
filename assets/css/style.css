@@ -1,0 +1,72 @@
+/* Light */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* Regular */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Ultrabold */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Ultrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Italic.otf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+}

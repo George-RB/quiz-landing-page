@@ -1,0 +1,25 @@
+@use 'fonts';
+
+$machina-font: 'Neue Machina', sans-serif;
+$raleway-font: 'Raleway', sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+}

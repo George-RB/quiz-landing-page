@@ -1,53 +1,68 @@
-/* Reset и базовые стили */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Light */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+/* Regular */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Ultrabold */
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../fonts/PPNeueMachina/PPNeueMachina-Ultrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Italic.otf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-v4020-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-  color: #333;
-  background-color: #fff;
-  min-height: 100vh;
-}
-
-/* CSS-переменные для цветов и отступов (будут плюсом) */
-:root {
-  --primary-color: #4f46e5;
-  --secondary-color: #10b981;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-}
-
-/* Контейнер для центрирования контента */
-.container {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
 }
 
-/* Utility-классы для быстрого доступа */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */
