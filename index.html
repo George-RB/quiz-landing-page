@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super Quiz | Пройди квиз и будь счастлив</title>
 
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
+
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -78,27 +80,27 @@
 
         <div class="hero__cards">
           <div class="hero__card">
-            <img src="/assets/img/icons/smile_1.png" alt="Smile" />
+            <img src="assets/img/icons/smile_1.png" alt="Smile" />
             <p class="card_title">Восхитительно</p>
           </div>
 
           <div class="hero__card">
-            <img src="/assets/img/icons/smile_2.png" alt="Smile" />
+            <img src="assets/img/icons/smile_2.png" alt="Smile" />
             <p class="card_title">Лучше не бывает</p>
           </div>
 
           <div class="hero__card">
-            <img src="/assets/img/icons/smile_3.png" alt="Smile" />
+            <img src="assets/img/icons/smile_3.png" alt="Smile" />
             <p class="card_title">Где найти еще?</p>
           </div>
 
           <div class="hero__card">
-            <img src="/assets/img/icons/smile_4.png" alt="Smile" />
+            <img src="assets/img/icons/smile_4.png" alt="Smile" />
             <p class="card_title">В натуре четко!</p>
           </div>
 
           <div class="hero__card">
-            <img src="/assets/img/icons/smile_5.png" alt="Smile" />
+            <img src="assets/img/icons/smile_5.png" alt="Smile" />
             <p class="card_title">Круто</p>
           </div>
         </div>
@@ -107,7 +109,231 @@
 
     <!-- Hero -->
 
+    <!-- Quiz -->
+    <!-- Секция одного шага квиза -->
+    <section class="quiz-step">
+      <div class="container">
+        <div class="quiz-step__inner">
+          <!-- 1. ЛЕВЫЙ БЛОК (Сайдбар) -->
+          <!-- В макете он черный и накапливает выбранные ответы -->
+          <aside class="quiz-step__sidebar">
+            <div class="sidebar-info">
+              <h4 class="sidebar-info__title">
+                Какие виды тестов вам нравятся?
+              </h4>
+
+              <!-- Контейнер для динамического текста из JS -->
+              <div class="sidebar-info__results" id="sidebarResults">
+                <span class="sidebar-info__placeholder"
+                  >Выберите варианты...</span
+                >
+              </div>
+            </div>
+          </aside>
+
+          <!-- 2. ПРАВЫЙ БЛОК (Основной контент) -->
+          <main class="quiz-step__main">
+            <h2 class="quiz-step__question">Какие виды тестов вам нравятся?</h2>
+
+            <p class="quiz-step__description">
+              Многие из нас хоть раз попадались на эту удочку — хочешь пройти
+              всего один тест из интернета, и вдруг понимаешь, что пролетела
+              полдня.
+            </p>
+
+            <!-- Облако тегов (Варианты ответов) -->
+            <!-- Важно: атрибут value у input должен точно совпадать с текстом в span -->
+            <div class="quiz-options quiz-options--tags" id="optionsContainer">
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="На темперамент"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">На темперамент</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="Кто я из вселенной Марвел"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label"
+                  >Кто я из вселенной Марвел</span
+                >
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="Увидел это"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">Увидел это</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="Мое тотемное животное"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">Мое тотемное животное</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="На IQ"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">На IQ</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="На словарный запас"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">На словарный запас</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="На логическое мышление"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">На логическое мышление</span>
+              </label>
+
+              <label class="quiz-options__item">
+                <input
+                  type="checkbox"
+                  name="quiz-answer"
+                  value="На уровень интеллекта"
+                  class="quiz-options__checkbox"
+                />
+                <span class="quiz-options__label">На уровень интеллекта</span>
+              </label>
+            </div>
+
+            <!-- Кнопка навигации -->
+            <div class="quiz-step__actions">
+              <button
+                type="button"
+                class="button button--primary quiz-step__btn-next"
+                id="nextStepBtn"
+              >
+                Продолжить
+              </button>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок с отзывами (Карусель) -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <!-- Заголовок секции по БЭМ -->
+        <h2 class="reviews__title">Отзывы наших пользователей</h2>
+
+        <!-- Оболочка Swiper -->
+        <div class="swiper reviews__slider">
+          <div class="swiper-wrapper">
+            <!-- Карточка 1 -->
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <figure class="review-card__image-container">
+                  <img
+                    src="assets/img/user-1.jpg"
+                    alt="Андрей Пархимович"
+                    class="review-card__image"
+                  />
+                </figure>
+              </div>
+              <div class="review-card__body">
+                <h3 class="review-card__name">Андрей Пархимович</h3>
+                <p class="review-card__text">
+                  В целом, конечно, постоянное информационно-пропагандистское
+                  обеспечение нашей деятельности влечет за собой процесс
+                  внедрения и модернизации направлений прогрессивного развития.
+                </p>
+              </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <figure class="review-card__image-container">
+                  <img
+                    src="assets/img/user-2.jpg"
+                    alt="Тимур Никитенко"
+                    class="review-card__image"
+                  />
+                </figure>
+              </div>
+              <div class="review-card__body">
+                <h3 class="review-card__name">Тимур Никитенко</h3>
+                <p class="review-card__text">
+                  Господа, глубокий уровень погружения в значительной степени
+                  обусловливает важность глубокомысленных рассуждений.
+                </p>
+              </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <figure class="review-card__image-container">
+                  <img
+                    src="assets/img/user-3.jpg"
+                    alt="Артур Усович"
+                    class="review-card__image"
+                  />
+                </figure>
+              </div>
+              <div class="review-card__body">
+                <h3 class="review-card__name">Артур Усович</h3>
+                <p class="review-card__text">
+                  Задача организации, в особенности же убеждённость некоторых
+                  оппонентов предопределяет высокую востребованность
+                  благоприятных перспектив.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Навигация карусели (Стрелки) -->
+          <div class="reviews__nav">
+            <button
+              type="button"
+              class="swiper-button-prev reviews__btn reviews__btn--prev"
+              aria-label="Назад"
+            ></button>
+            <button
+              type="button"
+              class="swiper-button-next reviews__btn reviews__btn--next"
+              aria-label="Вперед"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Подключение скриптов -->
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/quiz.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

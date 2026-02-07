@@ -33,6 +33,10 @@ function images() {
   );
 }
 
+function libs() {
+  return src('./assets/libs/**/*').pipe(dest('./dist/assets/libs'));
+}
+
 function copyCss() {
   return src('./assets/css/**/*.css').pipe(dest('./dist/assets/css'));
 }
@@ -50,7 +54,7 @@ function serve() {
 }
 
 exports.default = series(
-  parallel(styles, html, scripts, images, copyCss, fonts),
+  parallel(styles, html, scripts, images, copyCss, fonts, libs),
   serve,
 );
 exports.build = parallel(styles, html, scripts, images, copyCss);
