@@ -75,7 +75,7 @@ function renderStep(index) {
           <div class="custom-select" id="feedbackSelect">
             <div class="custom-select__header">
               <span id="selectCurrent">Очень понравился</span>
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E" width="20" />
+              <img src="assets/img/up.png" style="width: 24px; height: 24px;" />
             </div>
             <div class="custom-select__dropdown">
               <div class="custom-select__item" data-value="Очень понравился">Очень понравился</div>
