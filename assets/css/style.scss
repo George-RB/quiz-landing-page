@@ -84,6 +84,17 @@ header ul {
   }
 }
 
+.menu__wrapper {
+  .menu {
+    display: none;
+
+    @media (max-width: 360px) {
+      display: block;
+      width: auto;
+      height: 2rem;
+    }
+  }
+}
 .header__socials {
   display: flex;
   gap: 15px;
@@ -96,6 +107,9 @@ header ul {
       transform: scale(1.1);
       cursor: pointer;
     }
+  }
+  @media (max-width: 360px) {
+    display: none;
   }
 }
 

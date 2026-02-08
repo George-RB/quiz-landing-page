@@ -793,8 +793,7 @@
     display: none;
   }
   .nav-list {
-    font-size: 14px;
-    gap: 16px;
+    display: none;
   }
   .quiz-step__sidebar::before,
   .quiz-step__sidebar::after {
@@ -876,6 +875,17 @@ header ul {
   background: #9e00ff;
 }
 
+.menu__wrapper .menu {
+  display: none;
+}
+@media (max-width: 360px) {
+  .menu__wrapper .menu {
+    display: block;
+    width: auto;
+    height: 2rem;
+  }
+}
+
 .header__socials {
   display: flex;
   gap: 15px;
@@ -887,6 +897,11 @@ header ul {
 .header__socials li:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+@media (max-width: 360px) {
+  .header__socials {
+    display: none;
+  }
 }
 
 #quizDynamicContent {
