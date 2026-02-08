@@ -1,111 +1,74 @@
+@use 'fonts';
 @use 'vars' as *;
-
-.reviews {
-  padding: 100px 0;
-  background-color: #f8fafc;
-  overflow: hidden; // Чтобы слайды не создавали горизонтальную прокрутку
-
-  &__title {
-    font-family: $machina-font;
-    font-size: 48px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 80px; // Больше отступ из-за выноса фото
-
-    @media (max-width: 768px) {
-      font-size: 32px;
-      margin-bottom: 60px;
-    }
-  }
-
-  &__slider {
-    position: relative;
-    padding-top: 60px; // Место для аватаров, которые вылезают вверх
-    overflow: visible !important; // Чтобы аватары не обрезались краем слайдера
-  }
-
-  /* Навигация Swiper */
-  &__btn {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    color: #000;
-    transition: all 0.3s ease;
-    z-index: 10;
-
-    // Сброс стандартных стилей Swiper для стрелок
-    &::after {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    &:hover {
-      background-color: #000;
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    &--prev {
-      left: -25px;
-    }
-    &--next {
-      right: -25px;
-    }
-
-    @media (max-width: 1200px) {
-      display: none; // Скрываем стрелки на мобилках (оставляем свайп)
-    }
-  }
-}
 
 /* Карточка отзыва */
 .review-card {
-  background: #fff;
+  // Базовые стили для контейнера слайда
+  background: transparent;
   border-radius: 24px;
-  padding: 60px 30px 40px;
   text-align: center;
   position: relative;
   height: auto;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); 
   transition: transform 0.3s ease;
+  overflow: hidden;
 
   &:hover {
-    transform: translateY(-10px); // Обязательный Ховер из ТЗ
+    transform: translateY(-10px);
   }
 
-  &__top {
+  // Фон карточки 
+  &__bg {
     position: absolute;
-    top: -55px; // Вынос фото вверх за пределы карточки
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; // Фон занимает верхние 60%
+    background-image: url('../img/card_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   }
 
+  // Белый контентный блок 
+  &__content {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 80px 30px 40px; 
+    margin-top: 40%;
+    border-radius: 24px;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  // Аватарка
   &__image-container {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    border: 6px solid #fff; // Белая обводка как на макете
+    border: 6px solid #fff; 
     overflow: hidden;
     background: #e5e7eb;
-    margin: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: -135px auto 20px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 3;
   }
 
   &__image {
     width: 100%;
     height: 100%;
-    object-fit: cover; // Чтобы фото не искажалось
+    object-fit: cover;
   }
 
   &__name {
-    font-family: $machina-font;
-    font-size: 20px;
-    font-weight: 800;
+    font-family: $raleway-font;
+    font-size: 28px;
+    font-weight: bold;
+
     margin-bottom: 15px;
     color: #111;
   }
@@ -115,6 +78,25 @@
     font-size: 16px;
     line-height: 1.6;
     color: #4b5563;
-    flex-grow: 1; // Растягивает текст, чтобы кнопки были на одном уровне
   }
+}
+
+.review-card--1 .review-card__bg {
+  background-image: url('../img/card_1.png');
+}
+
+.review-card--2 .review-card__bg {
+  background-image: url('../img/card_2.png');
+}
+
+.review-card--3 .review-card__bg {
+  background-image: url('../img/card_3.png');
+}
+
+.review-card--4 .review-card__bg {
+  background-image: url('../img/card_1.png');
+}
+
+.review-card--5 .review-card__bg {
+  background-image: url('../img/card_2.png');
 }

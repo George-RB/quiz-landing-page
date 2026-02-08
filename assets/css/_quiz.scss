@@ -8,12 +8,12 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    gap: 60px; // Расстояние между черным блоком и контентом
+    gap: 60px;
     align-items: flex-start;
 
     @media (max-width: 1024px) {
       flex-direction: column;
-      gap: 50px; // Увеличил отступ для мобилок, чтобы тени не налезали
+      gap: 50px;
       padding: 0 20px;
     }
   }
@@ -40,7 +40,7 @@
       pointer-events: none;
     }
 
-    // Подложки для сайдбара (вправо-вниз)
+    // Подложки для сайдбара
     &::before {
       top: 10px;
       left: 10px;
@@ -82,7 +82,7 @@
     }
   }
 
-  /* 2. ПРАВЫЙ БЛОК (Основной контент) с эффектом стопки */
+  /* 2. ПРАВЫЙ БЛОК (Основной контент) */
   &__main {
     flex: 1;
     text-align: left;
@@ -107,14 +107,14 @@
       pointer-events: none;
     }
 
-    // Первая подложка (выше)
+    // Первая подложка
     &::before {
       top: -15px;
       opacity: 0.4;
       transform: scale(0.98);
     }
 
-    // Вторая подложка (еще выше)
+    // Вторая подложка
     &::after {
       top: -30px;
       z-index: -2;
@@ -153,16 +153,14 @@
     margin-bottom: 48px;
 
     .quiz-options__checkbox {
-      display: none; // Скрываем нативный чекбокс
+      display: none;
 
-      // Состояние: ВЫБРАНО
       &:checked + .quiz-options__label {
         background-color: #000;
         color: #fff;
         border-color: #000;
         padding-right: 44px;
 
-        // Крестик ✕ через SVG
         &::after {
           content: '';
           position: absolute;
@@ -211,7 +209,7 @@
     transition: background 0.2s ease;
 
     &:hover {
-      background: #333;
+      background: $btn_hover;
     }
   }
 }

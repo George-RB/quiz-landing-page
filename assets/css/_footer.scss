@@ -1,0 +1,99 @@
+@use 'vars' as *;
+
+.footer {
+  background: transparent;
+  margin-top: 60px;
+
+  .container {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    /* Добавляем закругленные верхние углы */
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__label {
+    font-family: $raleway-font;
+    font-size: 16px;
+    opacity: 0.6;
+    margin-bottom: 5px;
+  }
+
+  &__value {
+    font-family: $machina-font;
+    font-weight: 800;
+    font-size: 36px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    gap: 10px;
+    flex: 3;
+  }
+
+  /* Стили для кнопок */
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 12px;
+    flex-grow: 1;
+    transition:
+      background-color 0.15s ease,
+      transform 0.15s ease;
+
+    &.footer__btn--tiktok {
+      background: #000;
+    }
+    &.footer__btn--vk {
+      background: #4d76a1;
+    }
+    &.footer__btn--telegram {
+      background: #34aadf;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      border: 1px solid $btn_hover;
+    }
+  }
+
+  &__socials {
+    display: none;
+  }
+
+  &__logo {
+    font-family: $machina-font;
+    font-weight: 800;
+    font-size: 36px;
+    color: #fff;
+    flex-shrink: 0;
+    flex: 2;
+    text-align: right;
+  }
+}
