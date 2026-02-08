@@ -5,6 +5,7 @@
 @use 'quiz';
 @use 'reviews';
 @use 'footer';
+@use 'size';
 
 * {
   padding: 0;
@@ -94,6 +95,83 @@ header ul {
     &:hover {
       transform: scale(1.1);
       cursor: pointer;
+    }
+  }
+}
+
+#quizDynamicContent {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-info__title {
+  transition: all 0.3s ease;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 24px;
+  z-index: 100; // Чтобы список был поверх других элементов
+
+  &__header {
+    padding: 18px 25px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $raleway-font;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    // Скрываем по умолчанию
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+  }
+
+  /* КОГДА ДОБАВЛЯЕМ КЛАСС is-active — СПИСОК ПОЯВЛЯЕТСЯ */
+  &.is-active &__dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__item {
+    padding: 15px 25px;
+    font-family: $raleway-font;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 }

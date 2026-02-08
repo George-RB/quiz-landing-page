@@ -72,6 +72,15 @@
   background: #9e00ff;
   transform: translateY(-2px);
 }
+.button--secondary {
+  background: white;
+  color: #000000;
+  border: 1px solid black;
+}
+.button--secondary:hover {
+  background: #9e00ff;
+  transform: translateY(-2px);
+}
 
 .hero {
   padding: 4rem 0;
@@ -340,6 +349,7 @@
   position: relative;
   height: auto;
   display: flex;
+  justify-content: flex-end;
   flex-direction: column;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
@@ -353,7 +363,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 100%;
   background-image: url("../img/card_1.png");
   background-size: cover;
   background-position: center;
@@ -365,6 +375,7 @@
   z-index: 2;
   background: #fff;
   padding: 80px 30px 40px;
+  margin: 0 10px 10px;
   margin-top: 40%;
   border-radius: 24px;
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
@@ -504,6 +515,292 @@
   text-align: right;
 }
 
+/* Мобильная адаптация */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 768px) {
+  /* Общие стили */
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  /* Хедер */
+  .header .container {
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+  .header__logo {
+    font-size: 24px;
+    order: 1;
+    flex: 1;
+  }
+  .header__btn {
+    display: none;
+  }
+  .header__socials {
+    order: 2;
+    gap: 12px;
+  }
+  .header__socials img {
+    width: 24px;
+    height: 24px;
+  }
+  .header__nav {
+    order: 3;
+    flex: 1 0 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+  .nav-list {
+    gap: 20px;
+    font-size: 16px;
+    padding-bottom: 4px;
+  }
+  .nav-list li::after {
+    bottom: -4px;
+  }
+  /* Герой-секция */
+  .hero {
+    padding: 40px 0 60px;
+  }
+  .hero__title {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+  .hero__subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+  }
+  .hero__button {
+    margin-bottom: 40px;
+    padding: 16px 32px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+  }
+  .hero__cards {
+    gap: 20px;
+    justify-content: center;
+  }
+  .hero__card {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    flex: 1 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+  .hero__card img {
+    width: 40px;
+    height: 40px;
+  }
+  .hero__card .card_title {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  /* Секция квиза */
+  .quiz-step {
+    padding: 40px 0;
+  }
+  .quiz-step__inner {
+    gap: 30px;
+    padding: 0 16px;
+  }
+  .quiz-step__sidebar {
+    flex: 0 0 100%;
+    padding: 24px;
+    min-height: auto;
+  }
+  .quiz-step__sidebar .sidebar-info__title {
+    font-size: 14px;
+  }
+  .quiz-step__main {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  .quiz-step__main::before,
+  .quiz-step__main::after {
+    display: none; /* Скрываем декоративные слои на мобильных */
+  }
+  .quiz-step__question {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .quiz-step__description {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .quiz-step .quiz-options--tags {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .quiz-step .quiz-options--tags .quiz-options__label {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .quiz-step .quiz-step__btn-next {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  /* Слайдер отзывов */
+  .reviews__slider {
+    margin: 0 16px;
+    padding: 0 40px;
+  }
+  .review-card {
+    margin: 0 8px;
+  }
+  .review-card__content {
+    padding: 70px 16px 24px;
+    margin-top: 35%;
+  }
+  .review-card__image-container {
+    width: 90px;
+    height: 90px;
+    margin: -120px auto 16px;
+  }
+  .review-card__name {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .review-card__text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .reviews__nav {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .reviews__btn {
+    position: static;
+    transform: none;
+    width: 44px;
+    height: 44px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0;
+  }
+  .reviews__btn::after {
+    color: white;
+    font-size: 16px;
+  }
+  .reviews__btn--prev {
+    left: 0;
+  }
+  .reviews__btn--next {
+    right: 0;
+  }
+  /* Футер */
+  .footer {
+    margin-top: 40px;
+  }
+  .footer .container {
+    padding: 32px 16px;
+    gap: 32px;
+    border-radius: 20px 20px 0 0;
+  }
+  .footer__contacts {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer__label {
+    font-size: 14px;
+  }
+  .footer__value {
+    font-size: 24px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  .footer__buttons-container {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+  .footer__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-grow: 0;
+  }
+  .footer__btn img {
+    width: 24px;
+    height: 24px;
+  }
+  .footer__logo {
+    font-size: 28px;
+    text-align: center;
+    order: 1;
+    flex: none;
+  }
+}
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 32px;
+  }
+  .hero__subtitle {
+    font-size: 16px;
+  }
+  .hero__cards {
+    justify-content: space-between;
+  }
+  .hero__card {
+    flex: 1 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+  .hero__card:nth-child(5) {
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+  .quiz-step__question {
+    font-size: 28px;
+  }
+  .quiz-step__description {
+    font-size: 15px;
+  }
+  .review-card__content {
+    padding: 60px 12px 20px;
+  }
+  .review-card__image-container {
+    width: 80px;
+    height: 80px;
+    margin: -110px auto 12px;
+  }
+  .review-card__name {
+    font-size: 20px;
+  }
+  .footer__value {
+    font-size: 20px;
+  }
+}
+/* Скрываем декоративные элементы на совсем маленьких экранах */
+@media (max-width: 360px) {
+  .hero__decor {
+    display: none;
+  }
+  .nav-list {
+    font-size: 14px;
+    gap: 16px;
+  }
+  .quiz-step__sidebar::before,
+  .quiz-step__sidebar::after {
+    display: none;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -590,4 +887,72 @@ header ul {
 .header__socials li:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+#quizDynamicContent {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-info__title {
+  transition: all 0.3s ease;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 24px;
+  z-index: 100;
+  /* КОГДА ДОБАВЛЯЕМ КЛАСС is-active — СПИСОК ПОЯВЛЯЕТСЯ */
+}
+.custom-select__header {
+  padding: 18px 25px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+.custom-select__header:hover {
+  background-color: #f9f9f9;
+}
+.custom-select__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+}
+.custom-select.is-active .custom-select__dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.custom-select__item {
+  padding: 15px 25px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.custom-select__item:hover {
+  background: #000;
+  color: #fff;
+}
+.custom-select__item:last-child {
+  border-bottom: none;
 }/*# sourceMappingURL=style.css.map */

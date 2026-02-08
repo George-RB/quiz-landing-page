@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. Формируем строку текста
-    // Добавляем точку после каждого элемента, как на макете
+    // Добавляем точку после каждого элемента
     const formattedText = selectedValues.join('. ') + '.';
 
     // Вставляем текст в сайдбар
     sidebarResults.textContent = formattedText;
   }
 
-  // 5. Вешаем «слушатель» на каждый чекбокс
+  // 5. Вешаем слушатель на каждый чекбокс
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
       updateSidebar();
 
-      // Небольшой спецэффект: заставим текст в сайдбаре «мигнуть» при обновлении
+      // заставим текст в сайдбаре мигнуть при обновлении
       sidebarResults.style.opacity = '0.5';
       setTimeout(() => {
         sidebarResults.style.opacity = '1';

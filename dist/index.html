@@ -3,18 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Super Quiz | Пройди квиз и будь счастлив</title>
+    <title>Super Quiz</title>
 
     <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
 
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/favicon/favicon.ico"
-    />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
   </head>
   <body class="page">
     <header class="header">
@@ -64,16 +60,13 @@
       />
 
       <div class="container">
-        <!-- Заголовок -->
         <h1 class="hero__title">Это Супер-квиз!</h1>
 
-        <!-- Описание под заголовком -->
         <p class="hero__subtitle">
           Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
           которые любят проходить тесты!
         </p>
 
-        <!-- Главная кнопка запуска квиза -->
         <button class="button button--primary hero__button">
           Пройти супер-квиз
         </button>
@@ -115,7 +108,6 @@
       <div class="container">
         <div class="quiz-step__inner">
           <!-- 1. ЛЕВЫЙ БЛОК (Сайдбар) -->
-          <!-- В макете он черный и накапливает выбранные ответы -->
           <aside class="quiz-step__sidebar">
             <div class="sidebar-info">
               <h4 class="sidebar-info__title">
@@ -242,27 +234,297 @@
       </div>
     </section>
 
-    <article class="review-card review-card--bg-img">
-      <!-- Контент карточки -->
-      <div class="review-card__content">
-        <div class="review-card__top">
-          <figure class="review-card__image-container">
-            <img
-              src="assets/img/user_2.png"
-              alt="Тимур Никитенко"
-              class="review-card__image"
-            />
-          </figure>
+    <!-- Оболочка Swiper -->
+    <div class="swiper reviews__slider">
+      <div class="swiper-wrapper">
+        <article class="swiper-slide review-card review-card--1">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_1.png"
+                  alt="Андрей Пархимович"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Андрей Пархимович</h3>
+              <p class="review-card__text">
+                В целом, конечно, постоянное информационно-пропагандистское
+                обеспечение нашей деятельности влечет за собой процесс внедрения
+                и модернизации направлений прогрессивного развития.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="swiper-slide review-card review-card--3">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_3.png"
+                  alt="Артур Усович"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Артур Усович</h3>
+              <p class="review-card__text">
+                Задача организации, в особенности же убеждённость некоторых
+                оппонентов предопределяет высокую востребованность благоприятных
+                перспектив.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="swiper-slide review-card review-card--1">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_1.png"
+                  alt="Андрей Пархимович"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Андрей Пархимович</h3>
+              <p class="review-card__text">
+                В целом, конечно, постоянное информационно-пропагандистское
+                обеспечение нашей деятельности влечет за собой процесс внедрения
+                и модернизации направлений прогрессивного развития.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="swiper-slide review-card review-card--4">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_2.png"
+                  alt="Тимур Никитенко"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Тимур Никитенко</h3>
+              <p class="review-card__text">
+                Господа, глубокий уровень погружения в значительной степени
+                обусловливает важность глубокомысленных рассуждений.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="swiper-slide review-card review-card--5">
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_2.png"
+                  alt="Тимур Никитенко"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Тимур Никитенко</h3>
+              <p class="review-card__text">
+                Господа, глубокий уровень погружения в значительной степени
+                обусловливает важность глубокомысленных рассуждений.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="swiper-slide review-card review-card--1">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_1.png"
+                  alt="Андрей Пархимович"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Андрей Пархимович</h3>
+              <p class="review-card__text">
+                В целом, конечно, постоянное информационно-пропагандистское
+                обеспечение нашей деятельности влечет за собой процесс внедрения
+                и модернизации направлений прогрессивного развития.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Слайд 2 -->
+        <article class="swiper-slide review-card review-card--2">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_2.png"
+                  alt="Тимур Никитенко"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Тимур Никитенко</h3>
+              <p class="review-card__text">
+                Господа, глубокий уровень погружения в значительной степени
+                обусловливает важность глубокомысленных рассуждений.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="swiper-slide review-card review-card--3">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_3.png"
+                  alt="Артур Усович"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Артур Усович</h3>
+              <p class="review-card__text">
+                Задача организации, в особенности же убеждённость некоторых
+                оппонентов предопределяет высокую востребованность благоприятных
+                перспектив.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="swiper-slide review-card review-card--4">
+          <!-- Новый блок для фоновой картинки -->
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_2.png"
+                  alt="Тимур Никитенко"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Тимур Никитенко</h3>
+              <p class="review-card__text">
+                Господа, глубокий уровень погружения в значительной степени
+                обусловливает важность глубокомысленных рассуждений.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="swiper-slide review-card review-card--5">
+          <div class="review-card__bg"></div>
+          <!-- Контент карточки -->
+          <div class="review-card__content">
+            <div class="review-card__top">
+              <figure class="review-card__image-container">
+                <img
+                  src="assets/img/user_2.png"
+                  alt="Тимур Никитенко"
+                  class="review-card__image"
+                />
+              </figure>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__name">Тимур Никитенко</h3>
+              <p class="review-card__text">
+                Господа, глубокий уровень погружения в значительной степени
+                обусловливает важность глубокомысленных рассуждений.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Навигация (Стрелки) -->
+      <div class="reviews__nav">
+        <button
+          type="button"
+          class="swiper-button-prev reviews__btn reviews__btn--prev"
+        ></button>
+        <button
+          type="button"
+          class="swiper-button-next reviews__btn reviews__btn--next"
+        ></button>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__contacts">
+          <div class="footer__contact-group">
+            <p class="footer__label">Телефон</p>
+            <a href="tel:+375123456789" class="footer__value"
+              >+375 12 345 67 89</a
+            >
+          </div>
+          <div class="footer__contact-group">
+            <p class="footer__label">Email</p>
+            <a href="mailto:ourmail@gmail.com" class="footer__value"
+              >ourmail@gmail.com</a
+            >
+          </div>
         </div>
-        <div class="review-card__body">
-          <h3 class="review-card__name">Тимур Никитенко</h3>
-          <p class="review-card__text">
-            Господа, глубокий уровень погружения в значительной степени
-            обусловливает важность глубокомысленных рассуждений.
-          </p>
+
+        <div class="footer__bottom">
+          <div class="footer__buttons-container">
+            <a href="#" class="footer__btn footer__btn--tiktok">
+              <img src="assets/img/icons/tiktok.png" alt="TikTok" />
+            </a>
+            <a href="#" class="footer__btn footer__btn--vk">
+              <img src="assets/img/icons/vk.png" alt="VK" />
+            </a>
+            <a href="#" class="footer__btn footer__btn--telegram">
+              <img src="assets/img/icons/telegram.png" alt="Telegram" />
+            </a>
+          </div>
+
+          <div class="footer__logo">Super Quiz</div>
         </div>
       </div>
-    </article>
+    </footer>
+    <!-- End Footer -->
 
     <!-- Подключение скриптов -->
     <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
