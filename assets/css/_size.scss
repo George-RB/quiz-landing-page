@@ -1,4 +1,6 @@
-/* Мобильная адаптация */
+.menu {
+  display: none;
+}
 
 @media (max-width: 1024px) {
   .container {
@@ -7,6 +9,16 @@
 }
 
 @media (max-width: 768px) {
+  .menu__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    order: 1;
+    flex: 1;
+    .menu {
+      display: flex;
+      width: 4rem;
+    }
+  }
   /* Общие стили */
   body {
     font-size: 16px;
@@ -41,13 +53,19 @@
   .header__socials img {
     width: 24px;
     height: 24px;
+    display: none;
   }
 
+  // .menu__wrapper {
+  //   display: block;
+  // }
+
   .header__nav {
-    order: 3;
+    order: 2;
     flex: 1 0 100%;
     margin-top: 20px;
     overflow-x: auto;
+    display: none;
   }
 
   .nav-list {
@@ -291,9 +309,9 @@
     font-size: 16px;
   }
 
-  .hero__cards {
-    justify-content: space-between;
-  }
+  // .hero__cards {
+  //   justify-content: space-between;
+  // }
 
   .hero__card {
     flex: 1 0 calc(50% - 8px);

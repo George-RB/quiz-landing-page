@@ -42,6 +42,9 @@
             /></a>
           </li>
         </ul>
+        <div class="menu__wrapper">
+          <img src="./assets/img/hamburger.png" alt="Menu" class="menu" />
+        </div>
       </div>
     </header>
     <!-- Hero -->
@@ -124,110 +127,122 @@
           </aside>
 
           <!-- 2. ПРАВЫЙ БЛОК (Основной контент) -->
-          <main class="quiz-step__main">
-            <h2 class="quiz-step__question">Какие виды тестов вам нравятся?</h2>
+          <main class="quiz-step__main" id="quizMain">
+            <!-- Контейнер для анимации смены контента -->
+            <div id="quizDynamicContent">
+              <!-- Заголовок вопроса -->
+              <h2 class="quiz-step__question" id="quizQuestion">
+                Какие виды тестов вам нравятся?
+              </h2>
 
-            <p class="quiz-step__description">
-              Многие из нас хоть раз попадались на эту удочку — хочешь пройти
-              всего один тест из интернета, и вдруг понимаешь, что пролетела
-              полдня.
-            </p>
+              <!-- Описание вопроса -->
+              <p class="quiz-step__description" id="quizDesc">
+                Многие из нас хоть раз попадались на эту удочку — хочешь пройти
+                всего один тест из интернета, и вдруг понимаешь, что пролетела
+                полдня.
+              </p>
 
-            <!-- Облако тегов (Варианты ответов) -->
-            <!-- Важно: атрибут value у input должен точно совпадать с текстом в span -->
-            <div class="quiz-options quiz-options--tags" id="optionsContainer">
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="На темперамент"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">На темперамент</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="Кто я из вселенной Марвел"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label"
-                  >Кто я из вселенной Марвел</span
-                >
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="Увидел это"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">Увидел это</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="Мое тотемное животное"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">Мое тотемное животное</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="На IQ"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">На IQ</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="На словарный запас"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">На словарный запас</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="На логическое мышление"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">На логическое мышление</span>
-              </label>
-
-              <label class="quiz-options__item">
-                <input
-                  type="checkbox"
-                  name="quiz-answer"
-                  value="На уровень интеллекта"
-                  class="quiz-options__checkbox"
-                />
-                <span class="quiz-options__label">На уровень интеллекта</span>
-              </label>
-            </div>
-
-            <!-- Кнопка навигации -->
-            <div class="quiz-step__actions">
-              <button
-                type="button"
-                class="button button--primary quiz-step__btn-next"
-                id="nextStepBtn"
+              <!-- Облако тегов (Варианты ответов) -->
+              <div
+                class="quiz-options quiz-options--tags"
+                id="optionsContainer"
               >
-                Продолжить
-              </button>
+                <!-- Сюда JS будет подставлять <label>ы из массива quizData -->
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="На темперамент"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">На темперамент</span>
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="Кто я из вселенной Марвел"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label"
+                    >Кто я из вселенной Марвел</span
+                  >
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="Увидел это"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">Увидел это</span>
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="Мое тотемное животное"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">Мое тотемное животное</span>
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="На IQ"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">На IQ</span>
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="На словарный запас"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">На словарный запас</span>
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="На логическое мышление"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label"
+                    >На логическое мышление</span
+                  >
+                </label>
+
+                <label class="quiz-options__item">
+                  <input
+                    type="checkbox"
+                    name="quiz-answer"
+                    value="На уровень интеллекта"
+                    class="quiz-options__checkbox"
+                  />
+                  <span class="quiz-options__label">На уровень интеллекта</span>
+                </label>
+              </div>
+
+              <!-- Кнопка навигации -->
+              <div class="quiz-step__actions">
+                <button
+                  type="button"
+                  class="button button--primary quiz-step__btn-next"
+                  id="nextStepBtn"
+                >
+                  Продолжить
+                </button>
+              </div>
             </div>
           </main>
         </div>
